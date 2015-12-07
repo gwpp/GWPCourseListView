@@ -6,6 +6,7 @@ git clone本项目后，里面有一个GWPCourseListView文件夹，直接将该
 
 use:
 设置dataSource，依次实现以下方法
+
 /** 设置课程数据，必须实现 */
 - (NSArray<id<Course>> *)courseForCourseListView:(GWPCourseListView *)courseListView;
 
