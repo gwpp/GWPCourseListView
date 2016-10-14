@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Data Source-->
@@ -14,27 +15,39 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASX-AO-5Wj" customClass="GWPCourseListView">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="VTO-Bh-BZU"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="aAg-cR-PhM"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9J-mY-m1w">
+                                <color key="backgroundColor" red="1" green="0.086274509799999996" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Aoq-SM-Q9l"/>
+                                    <constraint firstAttribute="height" constant="100" id="OTL-f0-2AL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ASX-AO-5Wj" secondAttribute="trailing" id="Eq2-aD-bmn"/>
+                            <constraint firstAttribute="trailing" secondItem="a9J-mY-m1w" secondAttribute="trailing" constant="16" id="Qb4-MR-nys"/>
                             <constraint firstItem="ASX-AO-5Wj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SRF-Em-ZcL"/>
                             <constraint firstItem="ASX-AO-5Wj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bcw-qA-dsO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a9J-mY-m1w" secondAttribute="bottom" constant="16" id="gKe-dV-ATn"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ASX-AO-5Wj" secondAttribute="bottom" id="kDj-Ou-a0N"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addBtn" destination="a9J-mY-m1w" id="zK9-JO-lx0"/>
                         <outlet property="courseListView" destination="ASX-AO-5Wj" id="xbo-ZV-aCM"/>
                     </connections>
                 </viewController>

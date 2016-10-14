@@ -1,21 +1,28 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "b6eaf2fb-4c46-4036-a53a-d420f78f13b1++5127",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3BD45D3C4A9731D6BE25566C81AE3EB54913F269",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "b6eaf2fb-4c46-4036-a53a-d420f78f13b1++5127" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3BD45D3C4A9731D6BE25566C81AE3EB54913F269" : 9223372036854775807,
     "b6eaf2fb-4c46-4036-a53a-d420f78f13b1++5127" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EE22B6A5-EACA-4AFF-A6BF-98F9ED0254EE",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3BD45D3C4A9731D6BE25566C81AE3EB54913F269" : "GWPCourseListView\/",
     "b6eaf2fb-4c46-4036-a53a-d420f78f13b1++5127" : "CourseList\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "CourseList",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CourseList.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/GanWenPeng\/GWPCourseListView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3BD45D3C4A9731D6BE25566C81AE3EB54913F269"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/121.42.149.224\/project",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",

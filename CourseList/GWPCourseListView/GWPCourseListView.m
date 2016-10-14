@@ -60,8 +60,11 @@
 
 - (void)setCourse:(id<Course>)course{
     _course = course;
-    
-    self.textLabel.text = course.courseName;
+    if ([course nameAttribute] && [course courseName].length) {
+        self.textLabel.attributedText = [[NSAttributedString alloc] initWithString:[course courseName] attributes:[course nameAttribute]];
+    } else {
+        self.textLabel.text = course.courseName;
+    }
 }
 
 - (void)layoutSubviews{
@@ -308,8 +311,12 @@
     
 }
 
-#pragma mark - private
+#pragma mark - public
+- (void)reloadData{
+    [self loadData];
+}
 
+#pragma mark - private
 - (void)topBarItemClick:(UIButton *)btn{
     _selectedIndex = btn.tag;
     
@@ -318,24 +325,44 @@
 
 - (void)loadData{
 /*=============================== topBar ==============================*/
-    if ([_dataSource respondsToSelector:@selector(courseListView:titleInTopbarAtIndex:)]) {
-        for (int i=0; i<self.topBarBtnArr.count; i++) {
-            UIButton *btn = self.topBarBtnArr[i];
-            [btn setTitle:[_dataSource courseListView:self titleInTopbarAtIndex:i] forState:UIControlStateNormal];
+    NSArray *temp = @[
+                      @"周一",
+                      @"周二",
+                      @"周三",
+                      @"周四",
+                      @"周五",
+                      @"周六",
+                      @"周日"
+                      ];
+    for (int i=0; i<self.topBarBtnArr.count; i++) {
+        UIButton *btn = self.topBarBtnArr[i];
+        NSString *str = @"";
+        if ([_dataSource respondsToSelector:@selector(courseListView:titleInTopbarAtIndex:)]) {
+            
+            str = [_dataSource courseListView:self titleInTopbarAtIndex:i];
+        } else {
+            str = temp[i];
         }
-    } else {
-        NSArray *temp = @[
-                          @"周一",
-                          @"周二",
-                          @"周三",
-                          @"周四",
-                          @"周五",
-                          @"周六",
-                          @"周日"
-                          ];
-        for (int i=0; i<self.topBarBtnArr.count; i++) {
-            UIButton *btn = self.topBarBtnArr[i];
-            [btn setTitle:temp[i] forState:UIControlStateNormal];
+        
+        NSDictionary *attr;
+        if ([_dataSource respondsToSelector:@selector(courseListView:titleAttributesInTopbarAtIndex:)]) {
+             attr = [_dataSource courseListView:self titleAttributesInTopbarAtIndex:i];
+        }
+        if (attr) {
+            NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:str attributes:attr];
+            [btn setAttributedTitle:attrStr forState:UIControlStateNormal];
+        } else {
+            [btn setTitle:str forState:UIControlStateNormal];
+        }
+        
+        UIColor *bgColor;
+        if ([_dataSource respondsToSelector:@selector(courseListView:titleBackgroundColorInTopbarAtIndex:)]) {
+             bgColor = [_dataSource courseListView:self titleBackgroundColorInTopbarAtIndex:i];
+        }
+        if (bgColor) {
+            btn.backgroundColor = bgColor;
+        } else {
+            btn.backgroundColor = [UIColor whiteColor];
         }
     }
     
@@ -373,12 +400,10 @@
     }];
     id<Course> course = [[self.courseDataArr filteredArrayUsingPredicate:pre] firstObject];
     
-//    cell.textLabel.text = @"高等数学";
-//    cell.textLabel.text = course.courseName;
-    cell.course = course;
-//    UIColor *color = ;
-    cell.backgroundColor = course ? self.lightColorArr[arc4random_uniform((u_int32_t)self.lightColorArr.count)] : [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
+    cell.course = course;
+    UIColor *bgColor = [_dataSource courseListView:self courseTitleBackgroundColorForCourse:course];
+    cell.backgroundColor = course ? (bgColor ? bgColor : self.lightColorArr[arc4random_uniform((u_int32_t)self.lightColorArr.count)]) : [UIColor clearColor];
     
     return cell;
 }
