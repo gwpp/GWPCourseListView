@@ -87,6 +87,7 @@
 }
 
 #pragma mark - GWPCourseListViewDelegate
+/** 选中(点击)某一个课程单元之后的回调 */
 - (void)courseListView:(GWPCourseListView *)courseListView didSelectedCourse:(id<Course>)course{
     
 }
