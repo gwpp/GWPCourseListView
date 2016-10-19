@@ -26,7 +26,7 @@
         CourseModel *b = [CourseModel courseWithName:@"Java" dayIndex:1 startCourseIndex:3 endCourseIndex:3];
         CourseModel *c = [CourseModel courseWithName:@"C++" dayIndex:1 startCourseIndex:4 endCourseIndex:6];
         CourseModel *d = [CourseModel courseWithName:@"C#" dayIndex:2 startCourseIndex:4 endCourseIndex:4];
-        CourseModel *e = [CourseModel courseWithName:@"javascript" dayIndex:5 startCourseIndex:5 endCourseIndex:6];
+        CourseModel *e = [CourseModel courseWithName:@"javascript" dayIndex:7 startCourseIndex:5 endCourseIndex:6];
         _courseArr = [NSMutableArray arrayWithArray:@[a,b,c,d,e]];
     }
     return _courseArr;
