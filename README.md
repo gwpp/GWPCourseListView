@@ -49,3 +49,10 @@
 - 项目中的CourseModel并非必需，您可以自定义模型，只要遵守Course协议即可。
 
 其他见DEMO
+
+## 集成后使用效果
+![IMG_0345](https://o90qqsid7.qnssl.com/IMG_0345.png)
+![IMG_0346](https://o90qqsid7.qnssl.com/IMG_0346.png)
+![IMG_0347](https://o90qqsid7.qnssl.com/IMG_0347.png)
+
+
