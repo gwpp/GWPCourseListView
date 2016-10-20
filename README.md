@@ -49,3 +49,8 @@
 - 项目中的CourseModel并非必需，您可以自定义模型，只要遵守Course协议即可。
 
 其他见DEMO
+
+## 集成后使用效果
+![img](img.PNG)
+
+

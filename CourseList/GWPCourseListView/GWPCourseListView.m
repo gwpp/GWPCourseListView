@@ -107,19 +107,14 @@
 - (NSArray *)lightColorArr{
     if (!_lightColorArr) {
         _lightColorArr = @[
-                           RGB(0, 204, 204, 1),
-                           RGB(255, 153, 0, 1),
-                           RGB(172, 172, 57, 1),
-                           RGB(255, 102, 255, 1),
-                           RGB(255, 102, 102, 1),
-                           RGB(255, 102, 0, 1),
-                           RGB(36, 167, 255, 1),
-                           RGB(255, 0, 255, 1),
-                           RGB(255, 0, 128, 1),
-                           RGB(255, 61, 61, 1),
-                           RGB(61, 255, 255, 1),
-                           RGB(0, 230, 0, 1),
-                           RGB(0, 115, 230, 1)
+                           RGB(39, 201, 155, 1),
+                           RGB(146, 196, 40, 1),
+                           RGB(253, 185, 46, 1),
+                           RGB(112, 161, 246, 1),
+                           RGB(246, 126, 140, 1),
+                           RGB(185, 140, 221, 1),
+                           RGB(30, 180, 235, 1),
+                           RGB(226, 112, 194, 1),
                            ];
     }
     return _lightColorArr;
@@ -282,7 +277,7 @@
 - (void)setCourseDataArr:(NSArray<id<Course>> *)courseDataArr{
     __block NSUInteger cha = 0;
     
-    for (int i=0; i<MaxDay; i++) {
+    for (int i=0; i<=MaxDay; i++) {
         NSPredicate *pre = [NSPredicate predicateWithBlock:^BOOL(id<Course>  _Nonnull evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
             return evaluatedObject.dayIndex==i;
         }];
