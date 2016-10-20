@@ -51,6 +51,5 @@
 其他见DEMO
 
 ## 集成后使用效果
-![img](img.PNG)
-
+<img src="img.PNG" width="400px">
 
